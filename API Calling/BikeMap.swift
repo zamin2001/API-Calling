@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BikeViewController: UITableViewController {
+    
+    var bikes = [[String:String]]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Networks"
+        let query = "  http://api.citybik.es/v2/networks"
+       
     }
 
 
