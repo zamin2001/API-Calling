@@ -18,6 +18,7 @@ class BikeViewController: UITableViewController {
         self.title = "Networks"
         let query = "https://api.citybik.es/v2/networks"
     }
+    
     func parse(json:JSON){
         for result in json["networks"].arrayValue{
             let company = result["company"].stringValue
@@ -29,12 +30,11 @@ class BikeViewController: UITableViewController {
         }
     }
     
-                func loadError() {
-                    let alert = UIAlertController(title: "Loading Error",
-                                                  message: "There was a problem loading the bikes location",
-                                                  preferredStyle: .actionSheet)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    present(alert, animated: true, completion: nil)
-                }
+    func loadError() {
+        let alert = UIAlertController(title: "Loading Error", message:"There was a problem loading the bikes", preferredStyle:.actionSheet)
+        alert.addAction(UIAlertAction(title:"Ok", style: .default, handler:nil))
+        present(alert,animated:true, completion:nil)
+    }
+    
 }
 
