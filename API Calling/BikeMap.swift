@@ -37,7 +37,7 @@ class BikeViewController: UITableViewController {
     
     func parse(json:JSON){
         for result in json["networks"].arrayValue{
-            let company = result["c"].stringValue
+            let company = result["company"].stringValue
             let id = result["id"].stringValue
             let location = result["location"].stringValue
             let network = ["company":company,"id":id,"location":location]
@@ -53,10 +53,11 @@ class BikeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return networks.count
+        return networks.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for:indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
         let network = networks[indexPath.row]
         cell.textLabel?.text = network["company"]
         cell.detailTextLabel?.text = network["id"]
