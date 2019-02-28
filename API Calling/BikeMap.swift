@@ -20,31 +20,31 @@ class BikeViewController: UITableViewController {
         if let url = URL(string: query){
             if let data = try?  Data(contentsOf:url){
                 let json = try! JSON(data:data)
-                if json["status"] == "ok"{
-                    parse(json:json)
-                    return
-                }
-                
+              parse(json:json)
             }
         }
-        else{
-             loadError()
-        }
+    else{
+            loadError()
+    }
         
-      }
+}
     
-
+    
     
     func parse(json:JSON){
         for result in json["networks"].arrayValue{
-            let company = result["company"].stringValue
             let id = result["id"].stringValue
-            let location = result["location"].stringValue
-            let network = ["company":company,"id":id,"location":location]
-            networks.append(network)
-            tableView.reloadData()
+           let name = result["name"].stringValue
+            let network = ["id":id,"name":name]
+           networks.append(network)
+        
         }
+      
+        tableView.reloadData()
+       
+    
     }
+    
     
     func loadError() {
         let alert = UIAlertController(title: "Loading Error", message:"There was a problem loading the bikes", preferredStyle:.actionSheet)
@@ -59,9 +59,10 @@ class BikeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
         let network = networks[indexPath.row]
-        cell.textLabel?.text = network["company"]
+        cell.textLabel?.text = network["name"]
         cell.detailTextLabel?.text = network["id"]
         return cell
+       
     }
     
     
