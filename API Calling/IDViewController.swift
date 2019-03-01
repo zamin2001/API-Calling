@@ -1,23 +1,26 @@
 //
-//  ViewController.swift
+//  IDViewController.swift
 //  API Calling
 //
-//  Created by zamin ahmed on 2/22/19.
+//  Created by zamin ahmed on 3/1/19.
 //  Copyright © 2019 zamin ahmed. All rights reserved.
 //
 
+
+
+
 import UIKit
 
-class BikeViewController: UITableViewController {
+class LocationDetailsViewController: UITableViewController {
     
-    var networks = [[String:String]]()
-    
+    var Details = [[String:String]]()
+    var Identification = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global(qos:.userInitiated).async{
             [unowned self] in
-            self.title = "Names"
+            self.title = ""
             let query = "https://api.citybik.es/v2/networks"
             if let url = URL(string: query){
                 if let data = try?  Data(contentsOf:url){
@@ -32,11 +35,11 @@ class BikeViewController: UITableViewController {
     }
     
     func parse(json:JSON){
-        for result in json["networks"].arrayValue{
+        for result in json["Identification"].arrayValue{
             let id = result["id"].stringValue
-            let name = result["name"].stringValue
-            let network = ["id":id,"name":name]
-            networks.append(network)
+            let href = result["href"].stringValue
+            let identification = ["id":id,"href":href]
+            Details.append(identification)
         }
         DispatchQueue.global(qos:.userInitiated).async{
             [unowned self] in
@@ -51,16 +54,17 @@ class BikeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return networks.count
+        return Details.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath)
-        let network = networks[indexPath.row]
-        cell.textLabel?.text = network["name"]
-        cell.detailTextLabel?.text = network["id"]
+        let detail = Details[indexPath.row]
+        cell.textLabel?.text = detail["name"]
+        cell.detailTextLabel?.text = detail["id"]
         return cell
         
     }
 }
+
 
