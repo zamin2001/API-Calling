@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45019EB32229A48200D7D683 /* IDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45019EB22229A48200D7D683 /* IDViewController.swift */; };
 		454729CA22206E6D001F8371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454729C922206E6D001F8371 /* AppDelegate.swift */; };
 		454729CC22206E6D001F8371 /* BikeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454729CB22206E6D001F8371 /* BikeMap.swift */; };
 		454729CF22206E6D001F8371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454729CD22206E6D001F8371 /* Main.storyboard */; };
 		454729D122206E6F001F8371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454729D022206E6F001F8371 /* Assets.xcassets */; };
 		454729D422206E6F001F8371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454729D222206E6F001F8371 /* LaunchScreen.storyboard */; };
+		457FE255222EE647003C9D9E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FE254222EE647003C9D9E /* DetailsViewController.swift */; };
 		45CD616322245C1F0007036C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CD616222245C1F0007036C /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		45019EB22229A48200D7D683 /* IDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDViewController.swift; sourceTree = "<group>"; };
 		454729C622206E6C001F8371 /* API Calling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API Calling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		454729C922206E6D001F8371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		454729CB22206E6D001F8371 /* BikeMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeMap.swift; sourceTree = "<group>"; };
@@ -25,6 +24,7 @@
 		454729D022206E6F001F8371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		454729D322206E6F001F8371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		454729D522206E6F001F8371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457FE254222EE647003C9D9E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		45CD616222245C1F0007036C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../../Downloads/SwiftyJSON-master 3/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 			children = (
 				454729C922206E6D001F8371 /* AppDelegate.swift */,
 				454729CB22206E6D001F8371 /* BikeMap.swift */,
-				45019EB22229A48200D7D683 /* IDViewController.swift */,
+				457FE254222EE647003C9D9E /* DetailsViewController.swift */,
 				454729CD22206E6D001F8371 /* Main.storyboard */,
 				454729D022206E6F001F8371 /* Assets.xcassets */,
 				454729D222206E6F001F8371 /* LaunchScreen.storyboard */,
@@ -142,9 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45CD616322245C1F0007036C /* SwiftyJSON.swift in Sources */,
-				45019EB32229A48200D7D683 /* IDViewController.swift in Sources */,
 				454729CC22206E6D001F8371 /* BikeMap.swift in Sources */,
 				454729CA22206E6D001F8371 /* AppDelegate.swift in Sources */,
+				457FE255222EE647003C9D9E /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
